@@ -5,7 +5,8 @@ function Landing() {
     return (
         <>
             <div className='landingRow'>
-                <h1>Michael Sault</h1>
+                <h1 className='landingTitle'>Michael Sault</h1>
+                <h2 className='landingSubTitle'>BSc. Computer Science</h2>
             </div>
         </>
     )
