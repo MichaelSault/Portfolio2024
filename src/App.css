@@ -16,12 +16,28 @@
 
 .portfolioRow {
   background-color: rgb(10, 10, 10);
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-self: flex-start;
+}
+
+.carousel {
+  margin: 1em;
+}
+
+.carousel-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-item {
+  border-style: dashed;
+  border-color: aquamarine;
+  width: 500px;
+  align-self: center;
 }
 
 h1 {
