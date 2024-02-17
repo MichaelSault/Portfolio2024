@@ -7,7 +7,7 @@ function Portfolio() {
     return (
         <>
             <div className='portfolioRow'>
-                <h1 className='portfolioTitle'>Coming Soon</h1>
+                <h1 className='portfolioTitle'>Projects</h1>
                 <Carousel />
             </div>
         </>

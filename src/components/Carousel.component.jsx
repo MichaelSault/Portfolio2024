@@ -1,12 +1,16 @@
 import '../App.css';
 import '../styleSheets/carousel.css';
 
+import React, {useState} from "react";
+
 import CarouselItem from './CarouselItem.component';
 import FujiImage from '../images/fuji_rainbow.jpg';
 import FujiDark from '../images/fuji_dark.jpg';
 import Pikachu from '../images/Ash_and_Pikachu_Spearow.png';
 
 function Carousel() {
+
+    const [activeIndex, setActiveIndex] = useState(0);
 
     const items = [
         {
@@ -28,10 +32,15 @@ function Carousel() {
 
     return (
         <div className='carousel'>
-            <div className='carousel-inner'>
+            <div className='carousel-inner' style={{transform: `translate:(-${activeIndex * 100})`}}>
                 {items.map((item)=>{
                     return <CarouselItem item={item}/>
                 })}
+            </div>
+            <div className='carousel-buttons'>
+                <button>
+                    arrow_left
+                </button>
             </div>
         </div>
     )
