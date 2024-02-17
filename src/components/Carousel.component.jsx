@@ -41,7 +41,14 @@ function Carousel() {
                 <button>
                     arrow_left
                 </button>
+                <div className='indicators'>
+                    ...
+                </div>
+                <button>
+                    arrow_right
+                </button>
             </div>
+            
         </div>
     )
 }

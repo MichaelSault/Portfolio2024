@@ -1,5 +1,6 @@
 import React from "react";
 import '../App.css';
+import '../styleSheets/carousel.css';
 
 function CarouselItem({item}){
 
@@ -8,8 +9,7 @@ function CarouselItem({item}){
         <div className="carousel-item">
             <div></div>
             <img className="carousel-image" src={item.image} width='500px' height='500px'/>
-            <div className="carousel-item-title">{item.title}</div>
-            <div className="carousel-item-description">{item.description}</div>
+            <div className="carousel-item-description">{item.title}</div>
         </div>
     )
 }
