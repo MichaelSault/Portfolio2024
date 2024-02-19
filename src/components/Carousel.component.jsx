@@ -42,7 +42,9 @@ function Carousel() {
                     arrow_left
                 </button>
                 <div className='indicators'>
-                    ...
+                    {items.map((item, index)=> {
+                        return <button>{index}</button>
+                    })}
                 </div>
                 <button>
                     arrow_right
