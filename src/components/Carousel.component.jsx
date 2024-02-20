@@ -12,6 +12,18 @@ function Carousel() {
 
     const [activeIndex, setActiveIndex] = useState(0);
 
+    const updateIndex = (newIndex) => {
+        if (newIndex < 0){
+            newIndex = 0
+        } else if (newIndex >= items.length) {
+            newIndex = items.length -1;
+        }
+
+        setActiveIndex(newIndex);
+        console.log(activeIndex);
+    }
+
+
     const items = [
         {
             title: "Rainbow on Mt.Fuji",
@@ -32,22 +44,28 @@ function Carousel() {
 
     return (
         <div className='carousel'>
-            <div className='carousel-inner' style={{transform: `translate:(-${activeIndex * 100})`}}>
+            <div className='carousel-inner' style={{transform: `translate:(-${activeIndex * 100}%)`}}>
                 {items.map((item)=>{
-                    return <CarouselItem item={item}/>
+                    return <CarouselItem item={item} width={"100%"}/>
                 })}
             </div>
+
             <div className='carousel-buttons'>
-                <button>
-                    arrow_left
+                <button onClick={()=> {updateIndex(activeIndex - 1)}} className='button-arrow'>
+                    &#60;
                 </button>
                 <div className='indicators'>
                     {items.map((item, index)=> {
-                        return <button>{index}</button>
+                        return (
+                            <button 
+                                onClick={()=> {updateIndex(index)}} className="button-indicators">
+                                    <span  className={`${index===activeIndex? "indicator-symbol-active": "indicator-symbol"}`}></span>
+                                    {index}
+                            </button>)
                     })}
                 </div>
-                <button>
-                    arrow_right
+                <button onClick={()=> {updateIndex(activeIndex + 1)}} className='button-arrow'>
+                    &#62;
                 </button>
             </div>
             

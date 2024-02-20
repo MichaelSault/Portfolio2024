@@ -24,6 +24,44 @@ body{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
+.carousel-buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button-arrow {
+    border: none;
+    cursor: pointer;
+    margin-top: 0.5em;
+}
+
+.indicators {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.indicators > button {
+    margin: 5px;
+    margin-top: 0.5em;
+}
+
+.button-indicators {
+    border: none;
+    cursor: pointer;
+}
+
+.indicator-symbol {
+    color: #26343f;
+    font-size: xx-large;
+}
+
+.indicator-symbol-active{
+    color: #ffffff;
+    font-weight: bold;
+}
+
 .carousel-item{
     display: inline-flex;
     align-items: center;
