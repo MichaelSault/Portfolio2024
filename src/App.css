@@ -33,13 +33,6 @@
   flex-direction: column;
 }
 
-.carousel-item {
-  border-style: dashed;
-  border-color: aquamarine;
-  width: 500px;
-  align-self: center;
-}
-
 h1 {
   margin-bottom: 0;
 }

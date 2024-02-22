@@ -14,9 +14,11 @@ function Carousel() {
 
     const updateIndex = (newIndex) => {
         if (newIndex < 0){
-            newIndex = 0
-        } else if (newIndex >= items.length) {
+            newIndex = items.length-1
+        } else if (newIndex > items.length) {
             newIndex = items.length -1;
+        } else if (newIndex == items.length) {
+            newIndex = 0;
         }
 
         setActiveIndex(newIndex);
@@ -44,9 +46,11 @@ function Carousel() {
 
     return (
         <div className='carousel'>
-            <div className='carousel-inner' style={{transform: `translate:(-${activeIndex * 100}%)`}}>
-                {items.map((item)=>{
-                    return <CarouselItem item={item} width={"100%"}/>
+            <div className='carousel-inner'>
+                {items.map((item, index)=>{
+                    return (
+                        <CarouselItem item={item} active={`${index===activeIndex? true: false}`}/>
+                    )  
                 })}
             </div>
 

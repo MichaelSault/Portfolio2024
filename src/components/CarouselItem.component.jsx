@@ -2,14 +2,15 @@ import React from "react";
 import '../App.css';
 import '../styleSheets/carousel.css';
 
-function CarouselItem({item}){
+function CarouselItem({item, active}){
 
     console.log(item.image.default);
+    console.log(item.title, active);
     return (
-        <div className="carousel-item">
+        <div className="carousel-item" display={`${active? "block":"hidden"}`}>
             <div></div>
-            <img className="carousel-image" src={item.image} width='500px' height='500px'/>
-            <div className="carousel-item-description">{item.title}</div>
+            <img className="carousel-image" src={item.image}/>
+            <div className="carousel-item-description">{item.description}</div>
         </div>
     )
 }
