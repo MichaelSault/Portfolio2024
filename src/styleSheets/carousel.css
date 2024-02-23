@@ -75,6 +75,10 @@ body{
     padding-top: 1em;
 }
 
+.carousel-item-hidden{
+    display: none;
+}
+
 .carousel-item-title{
     font-size: 1.5rem;
     margin: 40px 0 40px 0;
