@@ -49,7 +49,14 @@ function Carousel() {
             <div className='carousel-inner'>
                 {items.map((item, index)=>{
                     return (
-                        <CarouselItem item={item} active={`${index===activeIndex? true: false}`}/>
+                        <div>
+                            {
+                                index===activeIndex
+                                ? <CarouselItem item={item} />
+                                : <></>
+                            }
+                            
+                        </div>
                     )  
                 })}
             </div>
