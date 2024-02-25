@@ -73,6 +73,7 @@ body{
     border-color: aquamarine;
     margin-top: 1em;
     padding-top: 1em;
+    border-radius: 5%;
 }
 
 .carousel-item-hidden{
@@ -89,7 +90,7 @@ body{
 
 .carousel-item-description{
     font-size: 1.15rem;
-    margin: 40px 0 40px 0;
+    margin: 5px 0 5px 0;
     padding: 0 20px 0 20px;
     white-space: normal;
     color: #617d98;
@@ -97,8 +98,10 @@ body{
 
 .carousel-image {
     width: 500px;
+    height: 350px;
     overflow: hidden;
     padding: 0 20px 0 20px;
+    border-radius: 5%;
 }
 
 .carousel-hidden {
