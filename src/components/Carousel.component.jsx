@@ -4,9 +4,10 @@ import '../styleSheets/carousel.css';
 import React, {useState} from "react";
 
 import CarouselItem from './CarouselItem.component';
-import FujiImage from '../images/fuji_rainbow.jpg';
-import FujiDark from '../images/fuji_dark.jpg';
-import Pikachu from '../images/Ash_and_Pikachu_Spearow.png';
+import MotionData from '../images/MDV.png';
+import MotionEmotion from '../images/MaE.png';
+import Dog from '../images/daftd.png';
+import Wedding from '../images/Wedding.png';
 
 function Carousel() {
 
@@ -28,19 +29,24 @@ function Carousel() {
 
     const items = [
         {
-            title: "Rainbow on Mt.Fuji",
-            image: FujiImage,
-            description: "A photo of a double rainbow from mt. fuji"
+            title: "Motion Data Visualizer",
+            image: MotionData,
+            description: "A hierarchical model of a human skeleton capable of visualizing motion data. [JAVA] [JS]"
         },
         {
-            title: "Night Hike down Mt.Fuji",
-            image: FujiDark,
-            description: "Hiking down mt.fuji after dark"
+            title: "Motion and Emotion",
+            image: MotionEmotion,
+            description: "A web based animation software using p5.js"
         },
         {
-            title: "Ash, Pikachu and 41 Spearow",
-            image: Pikachu,
-            description: "Ash and Pikachu get chased by a 41 spearow in episode 1."
+            title: "Did Anyone Feed the Dog?",
+            image: Dog,
+            description: "This is a full stack application that uses react and mssql to simply track if anyone has fed the dog today."
+        },
+        {
+            title: "Wedding Website",
+            image: Wedding,
+            description: "A wedding website built in React."
         }
     ]
 

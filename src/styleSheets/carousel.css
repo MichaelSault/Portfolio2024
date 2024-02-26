@@ -68,6 +68,7 @@ body{
     align-items: center;
     justify-items: center;
     height: 490px;
+    width: 600px;
     background-color: azure;
     border-style: dashed;
     border-color: aquamarine;
