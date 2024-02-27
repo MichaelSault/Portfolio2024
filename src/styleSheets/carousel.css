@@ -33,6 +33,7 @@ body{
     border: none;
     cursor: pointer;
     margin-top: 0.5em;
+    background-color: #ffffff9d;
 }
 
 .indicators {
@@ -50,16 +51,17 @@ body{
 .button-indicators {
     border: none;
     cursor: pointer;
+    background-color: #ffffff9d;
 }
 
 .indicator-symbol {
     color: #26343f;
-    font-size: xx-large;
 }
 
 .indicator-symbol-active{
     color: #ffffff;
     font-weight: bold;
+    font-size: x-large;
 }
 
 .carousel-item{
@@ -68,10 +70,10 @@ body{
     align-items: center;
     justify-items: center;
     height: 490px;
-    width: 600px;
-    background-color: azure;
-    border-style: dashed;
-    border-color: aquamarine;
+    width: 550px;
+    background-color: rgba(34, 34, 34, 0.048);
+    border-style: solid;
+    border-color: rgba(100, 99, 99, 0.075);
     margin-top: 1em;
     padding-top: 1em;
     border-radius: 5%;
