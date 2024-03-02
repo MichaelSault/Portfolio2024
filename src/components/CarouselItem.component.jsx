@@ -1,21 +1,48 @@
 import React from "react";
-import '../App.css';
-import '../styleSheets/carousel.css';
+import { useSpring, animated } from "react-spring";
 
-function CarouselItem({item}){
+const getPosition = (index, currentIndex) => {
+  let transform = "rotateY(0deg) scale(1)";
+  let zIndex = 0;
+  if (index > currentIndex) {
+    zIndex = 1;
+    transform = "rotateY(-55deg) scale(1)";
+  } else if (index < currentIndex) {
+    zIndex = 1;
+    transform = "rotateY(55deg) scale(1)";
+  }
+  return {
+    left: `${100 * (index - currentIndex)}%`,
+    transform,
+    zIndex: Math.abs(currentIndex - index) > 1 ? 0 : zIndex,
+    filter: `brightness(${index === currentIndex ? 1 : 0.32})`
+  };
+};
 
-    return (
-        <div>
-            <div className="carousel-item">
-                <div></div>
-                <img className="carousel-image" src={item.image}/>
-                <div className="carousel-item-description"><h2>{item.title}</h2>{item.description}</div>
-            </div>            
-        </div>
-            
-        
-        
-    )
-}
+const CarouselItem = ({ image, index, currentIndex }) => {
+  const props = useSpring({
+    ...getPosition(index, currentIndex),
+    config: {
+      mass: 2,
+      tension: 170,
+      friction: 26,
+      clamp: false,
+      precision: 0.01
+    }
+  });
+
+  return (
+    
+    <animated.div
+      className={`carousel__container--img`}
+      style={props}
+      key={image.id}
+    >
+      <a href={image.link}><img alt="" src={image.href} /></a>
+      <h2>{image.title}</h2>
+      <p>{image.description}</p>
+    </animated.div>
+  );
+};
 
 export default CarouselItem;

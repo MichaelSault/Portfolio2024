@@ -1,93 +1,85 @@
-import '../App.css';
-import '../styleSheets/carousel.css';
+import React, { useState } from "react";
+import CarouselItem from "./CarouselItem.component";
+import Shadow from "./Shadow";
+import images from "./images";
 
-import React, {useState} from "react";
+import "../styleSheets/slider.scss"
 
-import CarouselItem from './CarouselItem.component';
-import MotionData from '../images/MDV.png';
-import MotionEmotion from '../images/MaE.png';
-import Dog from '../images/daftd.png';
-import Wedding from '../images/Wedding.png';
+const Carousel = (props) => {
+  const [selectedImg, setSelectedImg] = useState(0);
+  const [shadow, setShadow] = useState(true);
 
-function Carousel() {
+  const getPrevIndex = (index) => {
+    let prev = index - 1;
+    if (prev < 0) prev = -1;
+    return prev;
+  };
 
-    const [activeIndex, setActiveIndex] = useState(0);
+  const getNextIndex = (index) => {
+    let next = index + 1;
+    if (next >= images.length) next = -1;
+    return next;
+  };
 
-    const updateIndex = (newIndex) => {
-        if (newIndex < 0){
-            newIndex = items.length-1
-        } else if (newIndex > items.length) {
-            newIndex = items.length -1;
-        } else if (newIndex == items.length) {
-            newIndex = 0;
-        }
+  const effectShadow = () => {
+    setShadow(false);
+    setTimeout(() => setShadow(true), 500);
+  };
 
-        setActiveIndex(newIndex);
-        console.log(activeIndex);
+  const handlePrev = async () => {
+    effectShadow();
+    const prevIndex = getPrevIndex(selectedImg);
+    if (prevIndex < 0) {
+      console.log("asd");
+      for (let i = 0; i < images.length; i++) {
+        await Promise.resolve((resolve) => setTimeout(resolve, 1500));
+        setSelectedImg(i);
+      }
+    } else {
+      setSelectedImg(prevIndex);
     }
+  };
 
+  const handleNext = () => {
+    effectShadow();
+    const nextIndex = getNextIndex(selectedImg);
+    if (nextIndex < 0) setSelectedImg(0);
+    else setSelectedImg(nextIndex);
+  };
 
-    const items = [
-        {
-            title: "Motion Data Visualizer",
-            image: MotionData,
-            description: "A hierarchical model of a human skeleton capable of visualizing motion data. [JAVA] [JS]"
-        },
-        {
-            title: "Motion and Emotion",
-            image: MotionEmotion,
-            description: "A web based animation software using p5.js"
-        },
-        {
-            title: "Did Anyone Feed the Dog?",
-            image: Dog,
-            description: "This is a full stack application that uses react and mssql to simply track if anyone has fed the dog today."
-        },
-        {
-            title: "Wedding Website",
-            image: Wedding,
-            description: "A wedding website built in React."
-        }
-    ]
+  return (
+    <div className="container">
+      <div className="carousel">
+        <div className="background" />
+        <button className="btn btn-border carousel__prev" onClick={handlePrev}>
+          PREV
+        </button>
+        <div className="carousel__container">
+          {images.map((img, index) => (
+            <CarouselItem
+              key={img.id}
+              image={img}
+              index={index}
+              currentIndex={selectedImg}
+            />
+          ))}
 
-    return (
-        <div className='carousel'>
-            <div className='carousel-inner'>
-                {items.map((item, index)=>{
-                    return (
-                        <div>
-                            {
-                                index===activeIndex
-                                ? <CarouselItem item={item} />
-                                : <></>
-                            }
-                            
-                        </div>
-                    )  
-                })}
-            </div>
-
-            <div className='carousel-buttons'>
-                <button onClick={()=> {updateIndex(activeIndex - 1)}} className='button-arrow'>
-                    &#60;
-                </button>
-                <div className='indicators'>
-                    {items.map((item, index)=> {
-                        return (
-                            <button 
-                                onClick={()=> {updateIndex(index)}} className="button-indicators">
-                                    <span  className={`${index===activeIndex? "indicator-symbol-active": "indicator-symbol"}`}></span>
-                                    {index}
-                            </button>)
-                    })}
-                </div>
-                <button onClick={()=> {updateIndex(activeIndex + 1)}} className='button-arrow'>
-                    &#62;
-                </button>
-            </div>
-            
+          <Shadow show={shadow} />
         </div>
-    )
-}
+        <button className="btn btn-border carousel__next" onClick={handleNext}>
+          NEXT
+        </button>
+      </div>
+      <div className="carousel__container--index">
+        {images.map((_, index) => (
+          <span
+            key={`${index}dot`}
+            className={`${index === selectedImg && "selected"}`}
+          ></span>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Carousel;
