@@ -38,7 +38,7 @@ const CarouselItem = ({ image, index, currentIndex }) => {
       style={props}
       key={image.id}
     >
-      <a href={image.link}><img alt="" src={image.href} /></a>
+      <a href={image.link}><img src={image.thumbnail} /></a>
       <h2>{image.title}</h2>
       <p>{image.description}</p>
     </animated.div>
