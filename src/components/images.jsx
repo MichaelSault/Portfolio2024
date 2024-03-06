@@ -35,7 +35,7 @@ const images = [
     },
     {
       id: 5,
-      thumbnail: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*CWFkh5z8oa6dZfn5_gkKKQ.jpeg",
+      thumbnail: "../src/images/github.png",
       title: "Github",
       description: "See source code and more on my github.",
       link: "https://github.com/MichaelSault"

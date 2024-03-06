@@ -1,6 +1,14 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
 
+import motionData from "../images/MDV.png";
+import motionEmotion from "../images/MaE.png";
+import feedDog from "../images/daftd.png";
+import weddingWebsite from "../images/Wedding.png";
+import github from "../images/github.png";
+
+const thumbnails = [motionData, motionEmotion, feedDog, weddingWebsite, github];
+
 const getPosition = (index, currentIndex) => {
   let transform = "rotateY(0deg) scale(1)";
   let zIndex = 0;
@@ -38,7 +46,7 @@ const CarouselItem = ({ image, index, currentIndex }) => {
       style={props}
       key={image.id}
     >
-      <a href={image.link}><img src={image.thumbnail} /></a>
+      <a href={image.link}><img src={thumbnails[index]} /></a>
       <h2>{image.title}</h2>
       <p>{image.description}</p>
     </animated.div>
