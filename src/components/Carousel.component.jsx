@@ -69,7 +69,7 @@ const Carousel = (props) => {
         <button className="btn btn-border carousel__next" onClick={handleNext}>
           NEXT
         </button>
-      </div>
+      
       <div className="carousel__container--index">
         {images.map((_, index) => (
           <span
@@ -77,6 +77,7 @@ const Carousel = (props) => {
             className={`${index === selectedImg && "selected"}`}
           ></span>
         ))}
+        </div>
       </div>
     </div>
   );
