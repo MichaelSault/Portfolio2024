@@ -12,7 +12,7 @@ body{
 
 .carousel {
     overflow: hidden;
-    width: 600px;
+    width: 601px;
     display: flex;
     flex-direction: column;
     justify-content: center;
