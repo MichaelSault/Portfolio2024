@@ -1,5 +1,6 @@
 {
-  "name": "https://michaelsault.github.io/portfolio2024",
+  "name": "portfolio",
+  "homepage": "https://michaelsault.github.io/Portfolio2024/",
   "private": true,
   "version": "0.0.0",
   "type": "module",

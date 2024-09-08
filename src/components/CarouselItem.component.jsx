@@ -1,11 +1,11 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
 
-import motionData from "../images/MDV.png";
-import motionEmotion from "../images/MaE.png";
-import feedDog from "../images/daftd.png";
-import weddingWebsite from "../images/Wedding.png";
-import github from "../images/github.png";
+import motionData from "../assets/MDV.png";
+import motionEmotion from "../assets/MaE.png";
+import feedDog from "../assets/daftd.png";
+import weddingWebsite from "../assets/Wedding.png";
+import github from "../assets/github.png";
 
 const thumbnails = [motionData, motionEmotion, feedDog, weddingWebsite, github];
 
