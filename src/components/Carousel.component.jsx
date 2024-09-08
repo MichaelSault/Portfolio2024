@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CarouselItem from "./CarouselItem.component";
 import Shadow from "./Shadow";
-import images from "./assets";
+import images from "./images/";
 
 import "../styleSheets/slider.scss"
 
